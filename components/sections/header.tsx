@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/moving-border";
 
 export const Header = () => {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
 
       <div 
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at top center, rgba(59, 130, 246, 0.4) 0%, rgba(37, 99, 235, 0.3) 30%, rgba(29, 78, 216, 0.2) 60%, rgba(30, 64, 175, 0.1) 100%)"
+          background: "radial-gradient(ellipse at top center, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.07) 20%, rgba(29, 78, 216, 0.03) 40%, rgba(30, 64, 175, 0.015) 60%, rgba(30, 64, 175, 0.007) 80%, rgba(10, 10, 10, 0.001) 100%)"
         }}
       ></div>
       <div className="relative z-10 text-center mt-10">

@@ -149,6 +149,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -215,6 +219,15 @@ a, button {
 /* Saira font class */
 .saira-regular {
   font-family: "Saira", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Work Sans font class */
+.work-sans {
+  font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

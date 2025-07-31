@@ -12,6 +12,17 @@ export const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 flex items-center justify-center"
@@ -29,18 +40,28 @@ export const Navbar = () => {
         <Link 
           href="#how-it-works" 
           className="text-sm md:text-base hover:text-blue-500 transition-colors"
+          onClick={(e) => handleSmoothScroll(e, 'how-it-works')}
         >
           How It Works
         </Link>
         <Link 
+          href="#what-we-look-for" 
+          className="hidden md:block text-sm md:text-base hover:text-blue-500 transition-colors"
+          onClick={(e) => handleSmoothScroll(e, 'what-we-look-for')}
+        >
+          What We Look For
+        </Link>
+        <Link 
           href="#about-us" 
           className="text-sm md:text-base hover:text-blue-500 transition-colors"
+          onClick={(e) => handleSmoothScroll(e, 'about-us')}
         >
           About Us
         </Link>
         <Link 
           href="#faq" 
           className="text-sm md:text-base hover:text-blue-500 transition-colors"
+          onClick={(e) => handleSmoothScroll(e, 'faq')}
         >
           FAQ
         </Link>
@@ -48,14 +69,9 @@ export const Navbar = () => {
           <Link 
             href="#why-partner" 
             className="text-sm md:text-base hover:text-blue-500 transition-colors"
+            onClick={(e) => handleSmoothScroll(e, 'why-partner')}
           >
             Why Partner?
-          </Link>
-          <Link 
-            href="#what-we-look-for" 
-            className="text-sm md:text-base hover:text-blue-500 transition-colors"
-          >
-            What We Look For
           </Link>
         </div>
       </nav>
@@ -85,14 +101,20 @@ export const Navbar = () => {
             <Link 
               href="#why-partner" 
               className="text-lg py-4 hover:text-blue-500 transition-colors border-b border-white/10"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={(e) => {
+                handleSmoothScroll(e, 'why-partner');
+                setIsSidebarOpen(false);
+              }}
             >
               Why Partner?
             </Link>
             <Link 
               href="#what-we-look-for" 
               className="text-lg py-4 hover:text-blue-500 transition-colors border-b border-white/10"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={(e) => {
+                handleSmoothScroll(e, 'what-we-look-for');
+                setIsSidebarOpen(false);
+              }}
             >
               What We Look For
             </Link>
